@@ -71,34 +71,46 @@ type AssertionFunction = (
 ) => Promise<GradingResult>;
 
 interface GradingResult {
-// Whether the test passed or failed
-pass: boolean;
+  // Whether the test passed or failed
+  pass: boolean;
 
-// Test score, typically between 0 and 1
-score: number;
+  // Test score, typically between 0 and 1
+  score: number;
 
-// Plain text reason for the result
-reason: string;
+  // Plain text reason for the result
+  reason: string;
 
-// Map of labeled metrics to values
-namedScores?: Record<string, number>;
+  // Map of labeled metrics to values
+  namedScores?: Record<string, number>;
 
-// Record of tokens usage for this assertion
-tokensUsed?: Partial<{
-total: number;
-prompt: number;
-completion: number;
-cached?: number;
-}>;
+  // Record of tokens usage for this assertion
+  tokensUsed?: TokenUsage;
 
-// Additional matcher/provider metadata
-metadata?: Record<string, unknown>;
+  // List of results for each component of the assertion
+  componentResults?: GradingResult[];
 
-// List of results for each component of the assertion
-componentResults?: GradingResult[];
+  // The assertion that was evaluated
+  assertion?: Assertion;
 
-// The assertion that was evaluated
-assertion: Assertion | null;
+  // User comment
+  comment?: string;
+
+  // Suggestions generated during grading
+  suggestions?: ResultSuggestion[];
+
+  // Additional matcher/provider metadata
+  metadata?: {
+    pluginId?: string;
+    strategyId?: string;
+    // Context value for context-related assertions
+    context?: string | string[];
+    contextUnits?: string[];
+    // Rendered assertion value with substituted variables (for display in UI)
+    renderedAssertionValue?: string;
+    // Full grading prompt sent to the grading LLM (for debugging)
+    renderedGradingPrompt?: string;
+    [key: string]: any;
+  };
 }
 
 ````

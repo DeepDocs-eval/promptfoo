@@ -9,7 +9,7 @@ The WebSocket provider allows you to connect to a WebSocket endpoint for inferen
 
 ## Configuration
 
-To use the WebSocket provider, set the provider `id` to `websocket` and provide the necessary configuration in the `config` section.
+To use the WebSocket provider, set the provider `id` to your WebSocket endpoint URL (for example, `wss://example.com/ws`) and provide the necessary configuration in the `config` section.
 
 ```yaml
 providers:

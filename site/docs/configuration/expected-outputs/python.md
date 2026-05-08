@@ -71,6 +71,9 @@ class TraceSpan(TypedDict):
 
 class TraceData(TypedDict):
     traceId: str
+    evaluationId: str
+    testCaseId: str
+    metadata: Optional[Dict[str, Any]]
     spans: List[TraceSpan]
 
 class AssertionValueFunctionContext(TypedDict):

@@ -115,9 +115,9 @@ High severity vulnerabilities with high success rates achieve near-critical scor
   - Exploitability: 1.5 + 2.5 × 0.5 = 2.75
   - Human Factor: 1.0 × (0.8 + 0.2 × 0.5) = 0.9
   - Complexity Penalty: 0.0 (medium complexity)
-  - **Total Risk Score**: 5.65 (High)
+  - **Total Risk Score**: 5.65 (Medium)
 
-Medium severity issues with substantial success rates can escalate to high-risk classification.
+Medium severity issues with substantial success rates can escalate to medium-risk classification.
 
 ## System-Level Risk Scoring
 

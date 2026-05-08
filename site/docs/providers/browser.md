@@ -1,6 +1,6 @@
 ---
 sidebar_label: Web Browser
-description: 'Execute LLM evaluations directly in browsers using WebGPU acceleration and local models for privacy-preserving testing'
+description: 'Automate browser interactions for testing with a headless Chromium (Playwright) to navigate, click, and extract content from dynamic web pages'
 ---
 
 # Browser Provider

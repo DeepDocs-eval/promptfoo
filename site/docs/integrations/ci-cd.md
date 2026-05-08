@@ -369,22 +369,11 @@ The output JSON follows this schema:
 
 ```typescript
 interface OutputFile {
-  evalId?: string;
-  results: {
-    stats: {
-      successes: number;
-      failures: number;
-      errors: number;
-    };
-    outputs: Array<{
-      pass: boolean;
-      score: number;
-      error?: string;
-      // ... other fields
-    }>;
-  };
-  config: UnifiedConfig;
+  evalId: string | null;
+  results: EvaluateSummaryV3 | EvaluateSummaryV2;
+  config: Partial<UnifiedConfig>;
   shareableUrl: string | null;
+  metadata?: OutputMetadata;
 }
 ```
 

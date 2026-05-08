@@ -19,15 +19,14 @@ pagination_next: null
 
 # Telemetry
 
-`promptfoo` collects basic anonymous telemetry by default. This telemetry helps us decide how to spend time on development.
+`promptfoo` sends usage telemetry to PostHog by default to help decide how to spend time on development.
 
 An event is recorded when:
 
 - A command is run (e.g. `init`, `eval`, `view`)
 - An assertion is used (along with the type of assertion, e.g. `is-json`, `similar`, `llm-rubric`)
 
-No additional information is collected. The above list is exhaustive.
-
+In addition, `Telemetry.identify()` may record PostHog user properties such as `email` (if available), whether the user is logged into Cloud, the auth method, and whether it is running in CI.
 To disable telemetry, set the following environment variable:
 
 ```sh

@@ -115,9 +115,11 @@ interface TraceSpan {
 
 interface TraceData {
   traceId: string;
+  evaluationId: string;
+  testCaseId: string;
+  metadata?: Record<string, any>;
   spans: TraceSpan[];
 }
-
 interface AssertionValueFunctionContext {
   // Raw prompt sent to LLM
   prompt: string | undefined;
