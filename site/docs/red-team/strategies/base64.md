@@ -6,7 +6,7 @@ description: Identify vulnerabilities in AI systems using base64-encoded payload
 
 # Base64 Encoding Strategy
 
-The Base64 Encoding strategy tests an AI system's ability to resist encoded inputs that might bypass security controls. Base64 encoding (using characters A-Z, a-z, 0-9, +, /) exploits a fundamental gap: LLMs learn to decode Base64 during pretraining, but their safety mechanisms often fail on encoded inputs.
+The Base64 Encoding strategy tests an AI system's ability to resist encoded inputs that might bypass security controls. Base64 encoding (using characters A-Z, a-z, 0-9, +, /, and '=' padding) exploits a fundamental gap: LLMs learn to decode Base64 during pretraining, but their safety mechanisms often fail on encoded inputs.
 
 ## Why It Works
 

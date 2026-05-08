@@ -31,7 +31,7 @@ redteam:
     - pliny
 ```
 
-You can control the number of injections using the `config.numTests` parameter (defaults to 5):
+You can control the number of injections using the `numTests` parameter (defaults to 5):
 
 ```yaml
 redteam:

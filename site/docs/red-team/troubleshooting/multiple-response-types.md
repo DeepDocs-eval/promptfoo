@@ -74,19 +74,20 @@ class CustomApiProvider {
     );
 
     let message = null;
+    const data = await response.json().catch(() => ({}));
+
     if (response.status === 400) {
       message = 'Request blocked by guardrail';
     } else {
-      const data = await response.json();
       message = data.message;
     }
 
     const ret = {
       output: message,
       tokenUsage: {
-        total: data.usage.total_tokens,
-        prompt: data.usage.prompt_tokens,
-        completion: data.usage.completion_tokens,
+        total: data?.usage?.total_tokens,
+        prompt: data?.usage?.prompt_tokens,
+        completion: data?.usage?.completion_tokens,
       },
     };
     return ret;

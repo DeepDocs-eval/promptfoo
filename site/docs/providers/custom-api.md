@@ -25,7 +25,7 @@ At minimum, a custom provider must implement an `id` method and a `callApi` meth
 export default class EchoProvider {
   id = () => 'echo';
 
-  callApi = async (prompt, context, options) => {
+  callApi = async (prompt, options, context) => {
     return {
       output: `Echo: ${prompt}`,
     };

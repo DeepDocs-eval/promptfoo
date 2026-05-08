@@ -67,6 +67,9 @@ A `context` object is available in the Ruby method. Here is its type definition:
 # TraceData
 {
   'traceId' => String,
+  'evaluationId' => String,
+  'testCaseId' => String,
+  'metadata' => Hash | nil,
   'spans' => Array[TraceSpan]
 }
 
